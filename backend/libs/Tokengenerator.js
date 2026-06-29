@@ -15,8 +15,6 @@ const generateToken = async (user, res) => {
       { expiresIn: '7d' }
     );
 
-    console.log("Generated JWT:", token); 
-
     res.cookie("Inventorymanagmentsystem", token, {
       maxAge: 7 * 24 * 60 * 60 * 1000,
       httpOnly: true,
