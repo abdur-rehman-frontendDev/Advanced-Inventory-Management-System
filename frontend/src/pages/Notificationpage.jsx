@@ -19,7 +19,7 @@ function NotificationPage() {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    const newSocket = io("https://advanced-inventory-management-system-v1.onrender.com", {
+    const newSocket = io("http://localhost:5000", {
       withCredentials: true,
       transports: ["websocket", "polling"],
     });

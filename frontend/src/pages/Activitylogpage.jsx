@@ -14,7 +14,7 @@ function Activitylogpage() {
   const { Authuser } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
-  const socket = io("https://advanced-inventory-management-system-v1.onrender.com", {
+  const socket = io("http://localhost:5000", {
      withCredentials: true,
      transports: ["websocket", "polling"], });
 

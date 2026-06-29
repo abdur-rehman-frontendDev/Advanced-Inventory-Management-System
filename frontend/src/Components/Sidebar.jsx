@@ -48,16 +48,16 @@ function Sidebar() {
               <Link to="/ManagerDashboard/product">Product</Link>
             </li>
             <li className="flex items-center space-x-3 text-gray-700 hover:text-blue-700 cursor-pointer p-2 rounded-md transition">
+              <MdPointOfSale className="text-xl" />
+              <Link to="/ManagerDashboard/sales">Sales</Link>
+            </li>
+            {/* <li className="flex items-center space-x-3 text-gray-700 hover:text-blue-700 cursor-pointer p-2 rounded-md transition">
               <RxActivityLog className="text-xl" />
               <Link to="/ManagerDashboard/activity-log">Activity Log</Link>
             </li>
             <li className="flex items-center space-x-3 text-gray-700 hover:text-blue-700 cursor-pointer p-2 rounded-md transition">
               <TfiSupport className="text-xl" />
               <Link to="/ManagerDashboard/supplier">Supplier</Link>
-            </li>
-            <li className="flex items-center space-x-3 text-gray-700 hover:text-blue-700 cursor-pointer p-2 rounded-md transition">
-              <MdPointOfSale className="text-xl" />
-              <Link to="/ManagerDashboard/sales">Sales</Link>
             </li>
             <li className="flex items-center space-x-3 text-gray-700 hover:text-blue-700 cursor-pointer p-2 rounded-md transition">
               <FiShoppingCart className="text-xl" />
@@ -70,15 +70,15 @@ function Sidebar() {
             <li className="flex items-center space-x-3 text-gray-700 hover:text-blue-700 cursor-pointer p-2 rounded-md transition">
               <IoNotificationsOutline className="text-xl" />
               <Link to="/ManagerDashboard/NotificationPageRead">Notifications</Link>
-            </li>
-            <li className="flex items-center space-x-3 text-gray-700 hover:text-blue-700 cursor-pointer p-2 rounded-md transition">
+            </li> */}
+            {/* <li className="flex items-center space-x-3 text-gray-700 hover:text-blue-700 cursor-pointer p-2 rounded-md transition">
               <MdOutlineCategory className="text-xl" />
               <Link to="/ManagerDashboard/category">Category</Link>
-            </li>
-            <li className="flex items-center space-x-3 text-gray-700 hover:text-blue-700 cursor-pointer p-2 rounded-md transition">
+            </li> */}
+            {/* <li className="flex items-center space-x-3 text-gray-700 hover:text-blue-700 cursor-pointer p-2 rounded-md transition">
               <LuUsers className="text-xl" />
               <Link to="/ManagerDashboard/Userstatus">Users</Link>
-            </li>
+            </li> */}
           </ul>
         )}
 
@@ -90,6 +90,10 @@ function Sidebar() {
               <Link to="/AdminDashboard/product">Product</Link>
             </li>
             <li className="flex items-center space-x-3 text-gray-700 hover:text-blue-700 cursor-pointer p-2 rounded-md transition">
+              <MdPointOfSale className="text-xl" />
+              <Link to="/AdminDashboard/sales">Sales</Link>
+            </li>
+            {/* <li className="flex items-center space-x-3 text-gray-700 hover:text-blue-700 cursor-pointer p-2 rounded-md transition">
               <RxActivityLog className="text-xl" />
               <Link to="/AdminDashboard/activity-log">Activity Log</Link>
             </li>
@@ -97,10 +101,7 @@ function Sidebar() {
               <TfiSupport className="text-xl" />
               <Link to="/AdminDashboard/supplier">Supplier</Link>
             </li>
-            <li className="flex items-center space-x-3 text-gray-700 hover:text-blue-700 cursor-pointer p-2 rounded-md transition">
-              <MdPointOfSale className="text-xl" />
-              <Link to="/AdminDashboard/sales">Sales</Link>
-            </li>
+            
             <li className="flex items-center space-x-3 text-gray-700 hover:text-blue-700 cursor-pointer p-2 rounded-md transition">
               <FiShoppingCart className="text-xl" />
               <Link to="/AdminDashboard/order">Order</Link>
@@ -112,7 +113,7 @@ function Sidebar() {
             <li className="flex items-center space-x-3 text-gray-700 hover:text-blue-700 cursor-pointer p-2 rounded-md transition">
               <IoNotificationsOutline className="text-xl" />
               <Link to="/AdminDashboard/notifications">Create Notifications</Link>
-            </li>
+            </li> */}
             <li className="flex items-center space-x-3 text-gray-700 hover:text-blue-700 cursor-pointer p-2 rounded-md transition">
               <MdOutlineCategory className="text-xl" />
               <Link to="/AdminDashboard/category">Category</Link>
@@ -127,17 +128,17 @@ function Sidebar() {
               <AiOutlineProduct className="text-xl" />
               <Link to="/StaffDashboard/product">Product</Link>
             </li>
-            <li className="flex items-center space-x-3 text-gray-700 hover:text-blue-700 cursor-pointer p-2 rounded-md transition">
+             <li className="flex items-center space-x-3 text-gray-700 hover:text-blue-700 cursor-pointer p-2 rounded-md transition">
+              <MdPointOfSale className="text-xl" />
+              <Link to="/StaffDashboard/sales">Sales</Link>
+            </li>
+            {/* <li className="flex items-center space-x-3 text-gray-700 hover:text-blue-700 cursor-pointer p-2 rounded-md transition">
               <RxActivityLog className="text-xl" />
               <Link to="/StaffDashboard/activity-log">Activity Log</Link>
             </li>
             <li className="flex items-center space-x-3 text-gray-700 hover:text-blue-700 cursor-pointer p-2 rounded-md transition">
               <TfiSupport className="text-xl" />
               <Link to="/StaffDashboard/supplier">Supplier</Link>
-            </li>
-            <li className="flex items-center space-x-3 text-gray-700 hover:text-blue-700 cursor-pointer p-2 rounded-md transition">
-              <MdPointOfSale className="text-xl" />
-              <Link to="/StaffDashboard/sales">Sales</Link>
             </li>
             <li className="flex items-center space-x-3 text-gray-700 hover:text-blue-700 cursor-pointer p-2 rounded-md transition">
               <FiShoppingCart className="text-xl" />
@@ -150,7 +151,7 @@ function Sidebar() {
             <li className="flex items-center space-x-3 text-gray-700 hover:text-blue-700 cursor-pointer p-2 rounded-md transition">
               <IoNotificationsOutline className="text-xl" />
               <Link to="/StaffDashboard/NotificationPageRead">Notifications</Link>
-            </li>
+            </li> */}
           </ul>
         )}
       </nav>

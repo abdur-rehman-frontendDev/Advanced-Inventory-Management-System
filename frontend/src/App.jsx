@@ -19,7 +19,7 @@ import Supplierpage from "./pages/Supplierpage";
 import Activitylogpage from "./pages/Activitylogpage";
 import Dashboardpage from "./pages/Dashboardpage";
 import Userstatus from "./pages/Userstatus";
-import NotificationPageRead from "./pages/Notificationpageread"
+import NotificationPageRead from "./pages/Notificationpageread";
 import ProtectedRoute from "./lib/ProtectedRoute";
 import toast, { Toaster } from "react-hot-toast";
 
@@ -29,11 +29,56 @@ function App() {
       <div>
         <Toaster />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<ServicePage />} />
-          <Route path="/SignupPage" element={<SignupPage />} />
+          {/* <Route path="/" element={<HomePage />} /> */}
+          <Route path="/" element={<LoginPage />} />
           <Route path="/LoginPage" element={<LoginPage />} />
+          <Route path="/SignupPage" element={<SignupPage />} />
+          <Route path="/about" element={<ServicePage />} />
 
+          {/* Admin Dashboard */}
+          <Route
+            path="/AdminDashboard"
+            element={<ProtectedRoute element={<AdminDashboard />} />}
+          >
+            <Route
+              path="product"
+              element={<ProtectedRoute element={<Productpage />} />}
+            />
+            <Route
+              path="order"
+              element={<ProtectedRoute element={<Orderpage />} />}
+            />
+            <Route
+              path="sales"
+              element={<ProtectedRoute element={<Salespage />} />}
+            />
+            <Route
+              path="stock-transaction"
+              element={<ProtectedRoute element={<StockTransaction />} />}
+            />
+            <Route
+              path="category"
+              element={<ProtectedRoute element={<Categorypage />} />}
+            />
+            <Route
+              path="notifications"
+              element={<ProtectedRoute element={<Notificationpage />} />}
+            />
+            <Route
+              path="Profilepage"
+              element={<ProtectedRoute element={<Profilepage />} />}
+            />
+            <Route
+              path="supplier"
+              element={<ProtectedRoute element={<Supplierpage />} />}
+            />
+            <Route
+              path="activity-log"
+              element={<ProtectedRoute element={<Activitylogpage />} />}
+            />
+          </Route>
+
+          {/* Manager Dashboard */}
           <Route
             path="/ManagerDashboard"
             element={<ProtectedRoute element={<ManagerDashboard />} />}
@@ -84,48 +129,7 @@ function App() {
             />
           </Route>
 
-          <Route
-            path="/AdminDashboard"
-            element={<ProtectedRoute element={<AdminDashboard />} />}
-          >
-            <Route
-              path="product"
-              element={<ProtectedRoute element={<Productpage />} />}
-            />
-            <Route
-              path="order"
-              element={<ProtectedRoute element={<Orderpage />} />}
-            />
-            <Route
-              path="sales"
-              element={<ProtectedRoute element={<Salespage />} />}
-            />
-            <Route
-              path="stock-transaction"
-              element={<ProtectedRoute element={<StockTransaction />} />}
-            />
-            <Route
-              path="category"
-              element={<ProtectedRoute element={<Categorypage />} />}
-            />
-            <Route
-              path="notifications"
-              element={<ProtectedRoute element={<Notificationpage />} />}
-            />
-            <Route
-              path="Profilepage"
-              element={<ProtectedRoute element={<Profilepage />} />}
-            />
-            <Route
-              path="supplier"
-              element={<ProtectedRoute element={<Supplierpage />} />}
-            />
-            <Route
-              path="activity-log"
-              element={<ProtectedRoute element={<Activitylogpage />} />}
-            />
-          </Route>
-
+          {/* Staff Dashboard */}
           <Route
             path="/StaffDashboard"
             element={<ProtectedRoute element={<StaffDashboard />} />}
@@ -152,7 +156,7 @@ function App() {
             />
             <Route
               path="NotificationPageRead"
-              element={<ProtectedRoute element={<NotificationPageRead/>} />}
+              element={<ProtectedRoute element={<NotificationPageRead />} />}
             />
             <Route
               path="Profilepage"
