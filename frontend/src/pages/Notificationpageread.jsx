@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllNotifications } from "../features/notificationSlice"; 
-import { io } from "socket.io-client";
+// import { io } from "socket.io-client";
 import FormattedTime from "../lib/FormattedTime ";
 import image from "../images/user.png";
 import TopNavbar from "../Components/TopNavbar";
@@ -10,25 +10,25 @@ function NotificationPageRead() {
   const { notifications } = useSelector((state) => state.notification);
   const { Authuser } = useSelector((state) => state.auth);
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    const socket = io("http://localhost:5000", {
-      withCredentials: true,
-      transports: ["websocket", "polling"],
-    });
-
-
-    dispatch(getAllNotifications());
+  //   const socket = io("http://localhost:5000", {
+  //     withCredentials: true,
+  //     transports: ["websocket", "polling"],
+  //   });
 
 
-    socket.on("newNotification", () => {
-      dispatch(getAllNotifications());
-    });
+  //   dispatch(getAllNotifications());
 
-    return () => {
-      socket.disconnect();
-    };
-  }, [dispatch]);
+
+  //   socket.on("newNotification", () => {
+  //     dispatch(getAllNotifications());
+  //   });
+
+  //   return () => {
+  //     socket.disconnect();
+  //   };
+  // }, [dispatch]);
 
   return (
     <div className="bg-base-100 min-h-screen">

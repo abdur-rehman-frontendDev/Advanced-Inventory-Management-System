@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { io } from "socket.io-client";
+// import { io } from "socket.io-client";
 import { useEffect, useState } from "react";
 import { getAllActivityLogs, getsingleUserActivityLogs } from "../features/activitySlice";
 import TopNavbar from "../Components/TopNavbar";
@@ -14,24 +14,24 @@ function Activitylogpage() {
   const { Authuser } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
-  const socket = io("http://localhost:5000", {
-     withCredentials: true,
-     transports: ["websocket", "polling"], });
+  // const socket = io("http://localhost:5000", {
+  //    withCredentials: true,
+  //    transports: ["websocket", "polling"], });
 
-  useEffect(() => {
-    if (Authuser?.id) {
-      dispatch(getAllActivityLogs());
-      dispatch(getsingleUserActivityLogs(Authuser.id));
-    }
+  // useEffect(() => {
+  //   if (Authuser?.id) {
+  //     dispatch(getAllActivityLogs());
+  //     dispatch(getsingleUserActivityLogs(Authuser.id));
+  //   }
 
-    socket.on("newActivityLog", (newLog) => {
-      setLogs((prevLogs) => [newLog, ...prevLogs]);
-    });
+  //   socket.on("newActivityLog", (newLog) => {
+  //     setLogs((prevLogs) => [newLog, ...prevLogs]);
+  //   });
 
-    return () => {
-      socket.off("newActivityLog");
-    };
-  }, [dispatch, Authuser.id]);
+  //   return () => {
+  //     socket.off("newActivityLog");
+  //   };
+  // }, [dispatch, Authuser.id]);
 
   useEffect(() => {
     setLogs(activityLogs);

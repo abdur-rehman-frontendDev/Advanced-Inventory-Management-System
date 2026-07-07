@@ -5,7 +5,7 @@ import { MdClose } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import image from "../images/user.png";
 import { createNotification, getAllNotifications, deleteNotification } from "../features/notificationSlice"; 
-import { io } from "socket.io-client";
+// import { io } from "socket.io-client";
 import toast from 'react-hot-toast';
 import FormattedTime from "../lib/FormattedTime ";
 
@@ -18,46 +18,46 @@ function NotificationPage() {
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [socket, setSocket] = useState(null);
 
-  useEffect(() => {
-    const newSocket = io("http://localhost:5000", {
-      withCredentials: true,
-      transports: ["websocket", "polling"],
-    });
-    setSocket(newSocket);
+  // useEffect(() => {
+  //   const newSocket = io("http://localhost:5000", {
+  //     withCredentials: true,
+  //     transports: ["websocket", "polling"],
+  //   });
+  //   setSocket(newSocket);
 
-    dispatch(getAllNotifications());
+  //   dispatch(getAllNotifications());
 
-    newSocket.on("newNotification", (newNotification) => {
+  //   newSocket.on("newNotification", (newNotification) => {
    
-      toast.custom((t) => (
-        <div className={`flex items-center p-4 rounded-lg shadow-lg bg-white text-gray-800 ${t.visible ? 'animate-enter' : 'animate-leave'}`}>
-          <img 
-            src={Authuser?.ProfilePic || image} 
-            alt="Notification" 
-            className="w-10 h-10 rounded-full mr-3"
-          />
-          <div>
-            <p className="font-medium">{newNotification.name}</p>
-            <p className="text-sm text-gray-600">{newNotification.type}</p>
-          </div>
-          <button 
-            onClick={() => toast.dismiss(t.id)}
-            className="ml-4 text-gray-500 hover:text-gray-700"
-          >
-            &times;
-          </button>
-        </div>
-      ), {
-        duration: 4000,
-        position: 'top-right',
-      });
-      dispatch(getAllNotifications());
-    });
+  //     toast.custom((t) => (
+  //       <div className={`flex items-center p-4 rounded-lg shadow-lg bg-white text-gray-800 ${t.visible ? 'animate-enter' : 'animate-leave'}`}>
+  //         <img 
+  //           src={Authuser?.ProfilePic || image} 
+  //           alt="Notification" 
+  //           className="w-10 h-10 rounded-full mr-3"
+  //         />
+  //         <div>
+  //           <p className="font-medium">{newNotification.name}</p>
+  //           <p className="text-sm text-gray-600">{newNotification.type}</p>
+  //         </div>
+  //         <button 
+  //           onClick={() => toast.dismiss(t.id)}
+  //           className="ml-4 text-gray-500 hover:text-gray-700"
+  //         >
+  //           &times;
+  //         </button>
+  //       </div>
+  //     ), {
+  //       duration: 4000,
+  //       position: 'top-right',
+  //     });
+  //     dispatch(getAllNotifications());
+  //   });
 
-    return () => {
-      newSocket.disconnect();
-    };
-  }, [dispatch, Authuser?.ProfilePic]);
+  //   return () => {
+  //     newSocket.disconnect();
+  //   };
+  // }, [dispatch, Authuser?.ProfilePic]);
 
   const resetForm = () => {
     setName("");
